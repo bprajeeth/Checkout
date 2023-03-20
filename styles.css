@@ -1,0 +1,180 @@
+body{
+    padding: 0;
+    margin: 0 0 15px 0;
+    overflow: hidden;
+}
+.navbar
+{
+    display: flex;
+    align-items: center;
+    height: 25vw;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.262);
+}
+.add_data
+{
+    border:solid;
+    display: flex;
+    align-items: center;
+    margin: 15px 10px 0 10px;
+    padding:20px;
+    height: 20vw;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.262);
+}
+
+.add_folder:hover, .add_data:hover, .available:hover
+{
+    border-color: #4c8bf5;
+    /* background-color: #4c8bf5; */
+}
+
+.add_data:hover .plus
+{
+    animation: rotate 2s;
+}
+
+.available
+{
+    padding: 10px;
+    margin: 15px 10px 0 10px;
+    min-height: 15vw;
+    border-radius: 10px;
+    background-color: rgb(211, 143, 143);
+    border: solid;
+    border-color: rgb(206, 109, 96);
+}
+.folder
+{
+    padding: 15px;
+    margin: 15px 10px 15px 10px;
+    /* max-height: 143vw; */
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.262);
+    overflow-y:auto;
+}
+.add_folder
+{
+    padding: 20px;
+    display: flex;
+    border: solid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 10px 15px 10px;
+    height: 25vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.add_folder:hover .plus_folder
+{
+    animation: rotate 2s;
+}
+
+footer
+{
+    display: flex;   
+    justify-content: center;  
+    align-items: center;  
+    padding: 10px; 
+    background-color: aquamarine;
+    border-radius: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+.scan
+{
+    z-index: 1;
+    height: 10vw;
+    width: auto;
+}
+
+footer:hover{
+    animation: scale 1s;
+}
+.hamburger{
+    height: 1.5rem;
+    width: auto;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2f6fdc;
+}
+
+.modal {
+    display: none; /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    border-radius: 5px;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+@keyframes scale{
+    50%{ transform: scale(1.2);}
+}
+
+ @keyframes rotate{
+    50% {transform: rotate(180deg);}
+ }
+
+@media (min-width:400px) {
+    .add_folder{
+        height:15vh;
+    }
+
+    .folder{
+        max-height: 63vh;
+    }
+    #available{
+        min-height: 7vh;
+    }
+    .add_data{
+        height: 10vh;
+    }
+    .navbar{
+        height: 12vh;
+    }
+    .scan{
+        height: 7vh;
+    }
+    
+}
