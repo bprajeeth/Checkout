@@ -11,6 +11,28 @@ body{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.262);
 }
+
+/* .overlay {  
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9); 
+    overflow-x: hidden;
+    transition: 0.5s; 
+  }
+   */
+/* .navmenu{
+    z-index: 1;
+    height: 100vh;
+    width: 50%;
+    border: solid;
+    float: right;
+    
+} */
 .add_data
 {
     border:solid;
@@ -147,7 +169,61 @@ footer:hover{
     cursor: pointer;
   }
 
+/* this styling applies for both login and signup form. Both are under the same class name login */
+.login{
+    bottom: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    min-width: 80vw;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    padding: 20px;
+}
 
+.email{
+    min-width:70vw;
+    min-height: 5vh;
+    border-radius: 5px;
+    margin: 20px 0 15px 0;
+    font-size: large;
+    text-align: center;
+    border: none;
+ }
+
+.username{
+    min-width:70vw;
+    min-height: 5vh;
+    border-radius: 5px;
+    margin: 0px 0 15px 0;
+    font-size: large;
+    text-align: center;
+    border: none;
+ }
+
+.pwd{
+    min-width:70vw;
+    min-height: 5vh;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    font-size: large;
+    text-align: center;
+    border: none;
+ }
+
+.button{
+    width: 5.5em;
+    height: 2em;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    background-color: #5849e6;
+    color: white;
+}
 @keyframes scale{
     50%{ transform: scale(1.2);}
 }
@@ -164,8 +240,8 @@ footer:hover{
     .folder{
         max-height: 63vh;
     }
-    #available{
-        min-height: 7vh;
+    .available{
+        min-height: 5rem;
     }
     .add_data{
         height: 10vh;
@@ -175,6 +251,19 @@ footer:hover{
     }
     .scan{
         height: 7vh;
+    }
+    .login{
+        min-width: 40vw;
+        min-height: 50vh;
+    }
+    .email{
+        min-width: 25vw;
+    }
+    .username{
+        min-width: 25vw;
+    }
+    .pwd{
+        min-width: 25vw;
     }
     
 }
