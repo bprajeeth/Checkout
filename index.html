@@ -19,12 +19,27 @@
     background-image: linear-gradient(to bottom right, rgb(225, 83, 83), #2f5ca8);
     }
 </style>
-        <form id="login" class="login" action="admin.html">
+<body ng-app="myapp">
+        
+        <!-- <form id="login" class="login">
             <h1 style="color: white;">Login</h1>
             <input type="text" id="username" class="username" name="username" placeholder="Username" />
             <input type="password" id="pwd" class="pwd" name="pwd" placeholder="Password" />
             <input type="submit" value="SignIn" id="submit" class="button" />
             <p>Don't have an account? <a href="signup.html" style="text-decoration:none; font-weight: bold;">Create one!</a></p>
-        </form>
+        </form> -->
+        <ng-view></ng-view>
 </body>
+<script>
+    var app = angular.module("myapp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "signin.html"
+        })
+        .when("/new", {
+            templateUrl : "newuser.html"
+        });
+    });
+</script>
 </html>

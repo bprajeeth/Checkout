@@ -1,8 +1,7 @@
 body{
     padding: 0;
     margin: 0 0 15px 0;
-    /* background-image: linear-gradient(rgb(203, 199, 199), white); */
-    
+    overflow: hidden;
 }
 .navbar
 {
@@ -11,16 +10,7 @@ body{
     height: 25vw;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.262);
-    opacity: 1;
 }
-
-header{
-    top: 0;
-    width: 100%;
-    position: sticky;
-    z-index: 1;
-}
-
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
@@ -99,83 +89,34 @@ header{
 
 .add_folder:hover, .add_data:hover, .available:hover
 {
-    border-width: 3px;
     border-color: #4c8bf5;
     /* background-color: #4c8bf5; */
 }
 
 .add_data:hover .plus
 {
-    z-index: 1;
     animation: rotate 2s;
 }
 
 .available
 {
-    display: flex;
-    align-items: center;
-    padding: 0 10px 0 0;
+    padding: 10px;
     margin: 15px 10px 0 10px;
-    height: 20vw;
+    min-height: 15vw;
     border-radius: 10px;
     background-color: rgb(211, 143, 143);
     border: solid;
     border-color: rgb(206, 109, 96);
 }
-
-.no_image{
-    height:100%;
-    width: auto;
-    margin-right: 15px;
-    margin-left: 10px;
-    /* border-radius: 10px; */
-}
-
-/* .available:hover{
-    min-height: 30vw ;
-} */
-
-.whole_data{
-    width: 100%;
-    display: flex;
-    
-}
-
-
 .folder
 {
     padding: 15px;
     margin: 15px 10px 15px 10px;
     /* max-height: 143vw; */
-    width: 100%;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.262);
     overflow-y:auto;
 }
-
-.news
-{
-    display: none;
-}
-
-.detailpage_news{
-    display: none;
-}
-
-.news_image{
-    display: none;
-}
-
-.data_all
-{
-    padding: 15px;
-    margin: 15px 10px 15px 10px;
-    /* max-height: 143vw; */
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.262);
-    overflow-y:auto;
-}
-
 .add_folder
 {
     padding: 20px;
@@ -253,9 +194,6 @@ footer:hover{
   .modal-content {
     background-color: #fefefe;
     border-radius: 5px;
-    box-shadow: 0 0 25px 0 blue;
-    border: solid;
-    border-color: blue;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -332,57 +270,6 @@ footer:hover{
     background-color: #5849e6;
     color: white;
 }
-
-.subject{
-    height: 100%;
-    padding: 0 10px 0 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* .star{
-    margin-left: auto;
-    fill: white;
-    scale: 0.9;
-} */
-
-.star:hover{
-    animation: scale 0.5s;
-}
-
-.star:active{
-    animation: rotate 1s ease-in-out;
-}
-
-.available_text{
-    padding-left: 0;
-    margin:0;
-    font-weight: bold;
-    font-size:medium ;
-}
-
-.modal_image{
-    height: 20vh;
-    width: auto;
-}
-
-.short_desc{
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-}
-
-.short_desc p{
-    margin: 0;
-    font-size: larger;
-    font-weight:400;
-}
-
-.short_desc img{
-    margin-bottom: 10px;
-}
-
 @keyframes scale{
     50%{ transform: scale(1.2);}
 }
@@ -391,93 +278,17 @@ footer:hover{
     50% {transform: rotate(180deg);}
  }
 
-
 @media (min-width:400px) {
-    body{
-        overflow: hidden;
-    }
-
     .add_folder{
         height:15vh;
     }
 
-    .news{
-        display: block;
-        padding: 15px;
-        margin: 15px 10px 15px 10px;
-        width: 30%;
-        max-height: 63vh;
-        border-radius: 5px;
-        background-color: rgba(0, 0, 0, 0.262);
-        overflow-y:auto;
-    }
-
-    .detailpage_news{
-        display: block;
-        padding: 15px;
-        margin: 15px 10px 15px 10px;
-        width: 30%;
-        max-height: 81vh;
-        border-radius: 5px;
-        background-color: rgba(0, 0, 0, 0.262);
-        overflow-y:auto;
-    }
-
-    .news_image{
-        display: block;
-        width: 100%;
-        background-size: 100%;
-        height: 30%;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-    .news_image:hover{
-        box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.482);
-        height: 35%;
-    }
-
-    .title{
-        display: flex;
-        align-items: center;
-        margin-top: auto;
-        border-radius: 5px;
-        text-align: center;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.395);
-    }
-
-    .title p{
-        font-size: large;
-        font-weight: bold;
-    }
-
     .folder{
-        width: 70%;
         max-height: 63vh;
     }
-
-    .data_all
-    {
-        width: 70%;
-        max-height: 81vh;
-    }
-
     .available{
-        height: 8rem;
+        min-height: 5rem;
     }
-    
-    .available_text{
-        padding-left: 0;
-        margin:0;
-        font-weight: bolder;
-        font-size:x-large ;
-    }
-    .available:hover{
-        height: 12rem;
-    }
-
     .add_data{
         height: 10vh;
     }
@@ -502,6 +313,3 @@ footer:hover{
     }
     
 }
-
-/* styling for form.html */
-
