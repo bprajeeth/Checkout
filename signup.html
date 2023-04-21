@@ -19,9 +19,9 @@
 </style>
 <body ng-app="app"  > 
         
-        <form id="signup" class="login" name="myform" action="admin.html">
+        <form id="signup" class="login" name="myform">
             <h1 style="color: white;">Create an Account!</h1>
-            <input type="email" id="email" class="email" name="email" placeholder="email" required />
+            <input type="email" id="email" class="email" name="email" placeholder="email"/>
             <input type="text" id="username" class="username" name="username" placeholder="Username" />
             <input type="password" id="pwd" class="pwd" name="pwd" placeholder="Password" ng-model="value" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/" />
             <p style="color:red; margin-top: 0;" ng-show="myform.pwd.$error.pattern">Invalid</p>
@@ -32,7 +32,17 @@
     var app=angular.module("app",[]);
     function notify()
     {
-      window.alert("Logged in");
+      let x = document.getElementById('email').value;
+      console.log(x);
+      if(x.length>0)
+      {
+        window.location.href = "admin.html";  
+        window.alert("Logged in");
+      }
+      else{
+        window.alert("Enter value");
+      }  
     }
+
 </script>
 </html>
