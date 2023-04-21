@@ -17,37 +17,22 @@
     background-image: linear-gradient(to bottom right,  rgb(225, 83, 83), #2f5ca8);
   }
 </style>
-<body>
+<body ng-app="app"  > 
         
-        <form id="signup" class="login" ng-app="myapp">
+        <form id="signup" class="login" name="myform" action="admin.html">
             <h1 style="color: white;">Create an Account!</h1>
-            <input type="email" id="email" class="email" name="email" placeholder="email" />
+            <input type="email" id="email" class="email" name="email" placeholder="email" required />
             <input type="text" id="username" class="username" name="username" placeholder="Username" />
-            <input type="password" id="pwd" class="pwd" name="pwd" placeholder="Password" />
-            <input type="submit" value="SignUp" id="submit" class="button" />
+            <input type="password" id="pwd" class="pwd" name="pwd" placeholder="Password" ng-model="value" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/" />
+            <p style="color:red; margin-top: 0;" ng-show="myform.pwd.$error.pattern">Invalid</p>
+            <input type="submit" value="Signup" id="submit" class="button" onclick="notify()" >
         </form>
 </body>
 <script>
-    var app=angular.module("myapp",[]);
-    app.filter('verify', function() {
-    return function(x) {
-        let password = document.getElementById('pwd');
-        console.log(password.value);
-        let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-        if(strongPassword.test(password.value)) 
-        {
-            password.style.backgroundColor = "green";
-            password.textContent = 'Strong';
-            return true;
-        } 
-        else
-        {
-            return false;
-        }
-        
-
-});
-
-
+    var app=angular.module("app",[]);
+    function notify()
+    {
+      window.alert("Logged in");
+    }
 </script>
 </html>

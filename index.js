@@ -52,3 +52,26 @@ function openNav() {
   function closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
+
+  function starred(id)
+{
+    console.log("inside");
+    // let check=document.style.getElementsByClassName("star");
+    // console.log(check[0]);
+    let ele=document.getElementById(id);
+    let parent=ele.parentElement;
+    console.log(parent);
+    // console.log(ele.style.fill);
+    if(ele.style.fill=="white")
+    {
+        console.log("insideeee");
+        ele.style.fill="rgb(255, 238, 0)"; //changing color to yellow starring data
+        // var admin=document.getElementById("starred_data");
+        // admin.innerHTML += `<p>dat addeddddd</p>`;
+    }
+    else
+    {
+        ele.style.fill="white";
+    }
+    event.stopPropagation();
+}

@@ -13,6 +13,10 @@ body{
 }
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 0;
     position: fixed; /* Stay in place */
@@ -100,13 +104,24 @@ body{
 
 .available
 {
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 0;
     margin: 15px 10px 0 10px;
-    min-height: 15vw;
+    height: 15vh;
     border-radius: 10px;
-    background-color: rgb(211, 143, 143);
+    /* background-color: rgb(211, 143, 143); */
+    background-color: rgb(236, 149, 149);
     border: solid;
-    border-color: rgb(206, 109, 96);
+    /* border-color: rgb(206, 109, 96); */
+    border-color: rgb(237, 101, 101);
+}
+.star:hover{
+    animation: scale 0.5s;
+}
+
+.star:active{
+    animation: rotate 1s ease-in-out;
 }
 .folder
 {
